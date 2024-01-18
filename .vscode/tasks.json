@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build FizzBuzz",
+            "type": "shell",
+            "command": "g++",
+            "args": ["-o", "FizzBuzz.bin", "FizzBuzz.cpp", "-lgtest", "-lgtest_main", "-lpthread"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "test FizzBuzz",
+            "type": "shell",
+            "command": "./FizzBuzz.bin",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "dependsOn": ["build FizzBuzz"]
+        }
+    ]
+}
