@@ -10,7 +10,7 @@
 
 std::string fizzBuzz(int value) {
     if(value % 3 == 0) return "Fizz";
-    if(value == 5) return "Buzz";
+    if(value % 5 == 0) return "Buzz";
     return std::to_string(value);
 }
 
@@ -43,4 +43,9 @@ TEST(FizzBuzzTest, returnsBuzzWith5PassedIn) {
 
 TEST(FizzBuzzTest, returnsFizzWith6PassedIn) {
     checkFizzBuzz(6, "Fizz");
+}
+
+
+TEST(FizzBuzzTest, returnsBuzzWith10PassedIn) {
+    checkFizzBuzz(10, "Buzz");
 }
