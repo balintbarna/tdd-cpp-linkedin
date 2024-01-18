@@ -8,6 +8,11 @@
 # include <gtest/gtest.h>
 
 
-TEST(FizzBuzzTest, doesPass) {
-    ASSERT_TRUE(true);
+std::string fizzBuzz(int value) {
+    return "1";
+}
+
+
+TEST(FizzBuzzTest, canCallFizzBuzz) {
+    std::string result = fizzBuzz(1);
 }
