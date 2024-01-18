@@ -8,9 +8,14 @@
 # include <gtest/gtest.h>
 
 
+bool isMultiple(int value, int base) {
+    return 0 == (value % base);
+}
+
+
 std::string fizzBuzz(int value) {
-    if(value % 3 == 0) return "Fizz";
-    if(value % 5 == 0) return "Buzz";
+    if(isMultiple(value, 3)) return "Fizz";
+    if(isMultiple(value, 5)) return "Buzz";
     return std::to_string(value);
 }
 
