@@ -22,3 +22,11 @@ TEST_F(CheckoutTests, CanAddItemPrice) {
 TEST_F(CheckoutTests, CanAddItem) {
     checkOut.addItem("a");
 }
+
+
+TEST_F(CheckoutTests, CanCalculateTotal) {
+    checkOut.addItemPrice("a", 1);
+    checkOut.addItem("a");
+    int total = checkOut.calculateTotal();
+    ASSERT_EQ(1, total);
+}
