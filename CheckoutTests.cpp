@@ -11,3 +11,9 @@ TEST(CheckoutTests, CanAddItemPrice) {
     Checkout co;
     co.addItemPrice("a", 1);
 }
+
+
+TEST(CheckoutTests, CanAddItem) {
+    Checkout co;
+    co.addItem("a");
+}
