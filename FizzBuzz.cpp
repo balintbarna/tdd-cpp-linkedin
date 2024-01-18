@@ -13,6 +13,7 @@ std::string fizzBuzz(int value) {
 }
 
 
-TEST(FizzBuzzTest, canCallFizzBuzz) {
+TEST(FizzBuzzTest, returns1With1PassedIn) {
     std::string result = fizzBuzz(1);
+    ASSERT_STREQ("1", result.c_str());
 }
