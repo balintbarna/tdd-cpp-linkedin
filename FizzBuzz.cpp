@@ -14,6 +14,7 @@ bool isMultiple(int value, int base) {
 
 
 std::string fizzBuzz(int value) {
+    if(isMultiple(value, 3) && isMultiple(value, 5)) return "FizzBuzz";
     if(isMultiple(value, 3)) return "Fizz";
     if(isMultiple(value, 5)) return "Buzz";
     return std::to_string(value);
@@ -53,4 +54,9 @@ TEST(FizzBuzzTest, returnsFizzWith6PassedIn) {
 
 TEST(FizzBuzzTest, returnsBuzzWith10PassedIn) {
     checkFizzBuzz(10, "Buzz");
+}
+
+
+TEST(FizzBuzzTest, returnsFizzBuzzWith15PassedIn) {
+    checkFizzBuzz(15, "FizzBuzz");
 }
