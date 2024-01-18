@@ -13,13 +13,17 @@ std::string fizzBuzz(int value) {
 }
 
 
+void checkFizzBuzz(int value, std::string expected) {
+    auto result = fizzBuzz(value);
+    ASSERT_STREQ(expected.c_str(), result.c_str());
+}
+
+
 TEST(FizzBuzzTest, returns1With1PassedIn) {
-    std::string result = fizzBuzz(1);
-    ASSERT_STREQ("1", result.c_str());
+    checkFizzBuzz(1, "1");
 }
 
 
 TEST(FizzBuzzTest, returns2With2PassedIn) {
-    std::string result = fizzBuzz(2);
-    ASSERT_STREQ("2", result.c_str());
+    checkFizzBuzz(2, "2");
 }
