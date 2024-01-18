@@ -7,13 +7,18 @@
 using namespace std;
 
 
-TEST(CheckoutTests, CanAddItemPrice) {
-    Checkout co;
-    co.addItemPrice("a", 1);
+class CheckoutTests : public ::testing::Test {
+public:
+protected:
+    Checkout checkOut;
+};
+
+
+TEST_F(CheckoutTests, CanAddItemPrice) {
+    checkOut.addItemPrice("a", 1);
 }
 
 
-TEST(CheckoutTests, CanAddItem) {
-    Checkout co;
-    co.addItem("a");
+TEST_F(CheckoutTests, CanAddItem) {
+    checkOut.addItem("a");
 }
