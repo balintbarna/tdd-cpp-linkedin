@@ -30,3 +30,35 @@ TEST_F(CheckoutTests, CanTotalForMultipleItems) {
     int total = checkOut.calculateTotal();
     ASSERT_EQ(3, total);
 }
+
+
+TEST_F(CheckoutTests, CanAddDiscount) {
+    checkOut.addDiscount("a", 3, 2);
+}
+
+
+TEST_F(CheckoutTests, CanTotalWithDiscount) {
+    checkOut.addItemPrice("a", 1);
+    checkOut.addDiscount("a", 3, 2);
+    checkOut.addItem("a");
+    checkOut.addItem("a");
+    checkOut.addItem("a");
+    int total = checkOut.calculateTotal();
+    ASSERT_EQ(2, total);
+    checkOut.addItem("a");
+    total = checkOut.calculateTotal();
+    ASSERT_EQ(3, total);
+    checkOut.addItem("a");
+    total = checkOut.calculateTotal();
+    ASSERT_EQ(4, total);
+    checkOut.addItem("a");
+    total = checkOut.calculateTotal();
+    ASSERT_EQ(4, total);
+}
+
+
+TEST_F(CheckoutTests, ThrowsOnAddedItemWithoutPrice) {
+    ASSERT_THROW(checkOut.addItem("a"), std::invalid_argument);
+    checkOut.addItemPrice("a", 1);
+    ASSERT_NO_THROW(checkOut.addItem("a"));
+}
