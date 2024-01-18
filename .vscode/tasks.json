@@ -57,7 +57,7 @@
         {
             "label": "test Mock",
             "type": "shell",
-            "command": "./MockTests.bin",
+            "command": "./MockTests.bin --gtest_repeat=5 --gtest_shuffle",
             "group": {
                 "kind": "test",
                 "isDefault": true
