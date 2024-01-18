@@ -7,6 +7,7 @@
 using namespace std;
 
 
-TEST(CheckoutTests, CanInstantiateCheckout) {
+TEST(CheckoutTests, CanAddItemPrice) {
     Checkout co;
+    co.addItemPrice("a", 1);
 }
